@@ -1,0 +1,35 @@
+" vim: set ft=vim:
+
+" Avoid loading MatchParen plugin
+let loaded_matchparen = 1
+
+" netRW: Open files in a split window
+let g:netrw_browse_split = 1
+
+" Indent Guide
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234 guibg=#1c1c1c
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236 guibg=#303030
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Taglist
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Close_On_Select = 1
+
+" Tab Completion
+"au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
+let g:SuperTabLongestHighlight = 1
+
+let g:ScreenImpl = 'Tmux'
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+
+" vim-flake8 and syntastic
+let g:flake8_ignore="E111"
+let g:syntastic_python_checker_args='--ignore=E111'
+autocmd BufWritePost *.py call Flake8()
