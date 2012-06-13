@@ -171,6 +171,11 @@ au FileType css set et sw=2 ts=2 sts=2 ff=unix fdm=indent fenc=utf8
 au FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+au FileType qf call AdjustWindowHeight(3, 10)
+function! AdjustWindowHeight(minheight, maxheight)
+	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
