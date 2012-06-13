@@ -27,6 +27,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle "pangloss/vim-javascript"
 " vim-scripts repos
 Bundle 'mru.vim'
+Bundle "jQuery"
 "Bundle 'pyflakes.vim'
 Bundle 'Pydiction'
 Bundle 'taglist.vim'

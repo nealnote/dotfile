@@ -175,3 +175,12 @@ au FileType css set et sw=2 ts=2 sts=2 ff=unix fdm=indent fenc=utf8
 au FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
+set wildignore+=.hg,.git,.svn
+set wildignore+=*.aux,*.out,*.toc
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest
+set wildignore+=*.sw?
+set wildignore+=*.DS_Store
+set wildignore+=*.pyc
+set wildignore+=*.egg,*.egg-info
+set wildignore+=*.orig
