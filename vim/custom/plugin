@@ -21,17 +21,27 @@ let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Close_On_Select = 1
 
 " Tab Completion
-"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:neocomplcache_enable_at_startup=1
+"let g:neoComplcache_disableautocomplete=1
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_min_syntax_length = 3
+au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType python setlocal omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
+"let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
+"let g:SuperTabDefaultCompletionType="<c-n>"
+let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 let g:SuperTabLongestHighlight = 1
 
 let g:ScreenImpl = 'Tmux'
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+"let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 " vim-flake8 and syntastic
-let g:flake8_ignore="E111"
-let g:syntastic_python_checker_args='--ignore=E111'
+let g:flake8_ignore="E111,E501,E251"
+let g:syntastic_python_checker_args='--ignore=E111,E501,E251'
+let g:pyflakes_use_quickfix = 0
 let g:syntastic_check_on_open=1
 let loaded_html_syntax_checker = 0
 autocmd BufWritePost *.py call Flake8()

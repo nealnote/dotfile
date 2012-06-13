@@ -48,4 +48,6 @@ map <F11> :set paste!<BAR>set nopaste?<CR>
 
 " customize
 map ,r :silent !arch -i386 osascript ~/sh/reloadFirefox.scpt >/dev/null<CR>
+" close qfix window
+nmap <silent> \` :cclose<CR>
 

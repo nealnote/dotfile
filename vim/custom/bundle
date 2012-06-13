@@ -15,10 +15,10 @@ Bundle 'gmarik/vundle'
 
 " repos on github
 Bundle 'scrooloose/syntastic'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'sjl/gundo.vim'
+Bundle 'sjl/gundo.vim'
 "Bundle 'jcrocholl/pep8.py'
 Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
@@ -28,11 +28,10 @@ Bundle "pangloss/vim-javascript"
 " vim-scripts repos
 Bundle 'mru.vim'
 Bundle "jQuery"
-"Bundle 'pyflakes.vim'
-Bundle 'Pydiction'
+"Bundle 'Pydiction'
+Bundle 'pyflakes.vim'
 Bundle 'taglist.vim'
 "Bundle 'TaskList.vim'
-"Bundle 'OmniCppComplete'
 Bundle 'comments.vim'
 Bundle 'AutoClose--Alves'
 Bundle 'The-NERD-tree'

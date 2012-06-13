@@ -66,8 +66,9 @@ set hlsearch
 set backspace=indent,eol,start
 
 " Insert mode completion options
+set completeopt+=longest
 "set completeopt=menu,longest,preview
-set completeopt=menuone,longest,preview
+"set completeopt=menuone,longest,preview
 
 " Always show status line, even for one window
 set laststatus=2
