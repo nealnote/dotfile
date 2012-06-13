@@ -41,9 +41,9 @@ function! ToggleHLSearch()
   endif
 endfunction
 nmap <silent> <F1> <Esc>:call ToggleHLSearch()<CR>
-map <F4> :set paste!<BAR>set nopaste?<CR>
 map <F5> <ESC>:NERDTreeToggle<CR>
 nmap <silent> <F6> :set number!<CR>
+map <F11> :set paste!<BAR>set nopaste?<CR>
 
 
 " customize

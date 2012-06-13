@@ -77,13 +77,8 @@ set laststatus=2
 " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set matchtime=2
 
-" Don't highlight results of a search
-
 " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set nrformats=octal,hex,alpha
-
-" Use F10 to toggle 'paste' mode
-set pastetoggle=<F11>
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
