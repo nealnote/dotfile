@@ -25,6 +25,7 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
 Bundle "pangloss/vim-javascript"
+Bundle "groenewege/vim-less"
 " vim-scripts repos
 Bundle 'mru.vim'
 Bundle "jQuery"

@@ -27,6 +27,7 @@ fi
 sudo pip install flake8
 
 echo "init shell >>>"
+link gitconfig
 link bashrc
 link tmux.conf
 link zshrc

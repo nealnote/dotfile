@@ -5,9 +5,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="alanpeabody"
-#ZSH_THEME="pygmalion"
-ZSH_THEME="juanghurtado"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="alanpeabody"
+ZSH_THEME="pygmalion"
+#ZSH_THEME="juanghurtado"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -26,7 +27,7 @@ ZSH_THEME="juanghurtado"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew python pip vundle node npm svn rhc)
+plugins=(git osx brew python pip vundle node npm svn rhc virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,3 +36,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/Users/evan/android-sdk-mac_x86/platform-tools:~/bin
 export EDITOR=/usr/local/bin/vim
 unsetopt correct_all
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
