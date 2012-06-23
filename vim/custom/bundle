@@ -28,10 +28,14 @@ Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
 " vim-scripts repos
 Bundle 'mru.vim'
+Bundle "css3"
 Bundle "jQuery"
+Bundle "briangershon/html5.vim"
 "Bundle 'Pydiction'
+Bundle "django.vim"
 Bundle 'pyflakes.vim'
 Bundle 'taglist.vim'
+Bundle "AutoTag"
 "Bundle 'TaskList.vim'
 Bundle 'comments.vim'
 Bundle 'AutoClose--Alves'

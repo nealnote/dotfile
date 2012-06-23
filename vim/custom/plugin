@@ -15,10 +15,14 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Taglist
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Close_On_Select = 1
+
+" Autotag
+let g:autotagExcludeSuffixes="xml.text.txt.less.conf"
 
 " Tab Completion
 "let g:neocomplcache_enable_at_startup=1
@@ -31,8 +35,8 @@ au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 au FileType python setlocal omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType="<c-x><c-k>"
-"let g:SuperTabDefaultCompletionType="<c-n>"
-let g:SuperTabDefaultCompletionType="<c-x><c-o>"
+let g:SuperTabDefaultCompletionType="<c-n>"
+"let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 let g:SuperTabLongestHighlight = 1
 
 let g:ScreenImpl = 'Tmux'

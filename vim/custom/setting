@@ -6,7 +6,6 @@ syntax enable
 
 set background=dark
 colorscheme rdark
-"colo freya
 "colo no_quarter
 "colo railscasts
 "colo ir_black
@@ -14,21 +13,13 @@ colorscheme rdark
 "colo slate
 
 "set noimd
-if has("gui_running")
-    "winpos 250 100
-	set lines=50 columns=128
-	set transparency=10
-
-	"set imactivatekey=S
-	"inoremap <ESC> <ESC>:set iminsert=2<CR>
-endif
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 set t_Co=256
 set guifont=Droid\ Sans\ Mono:h12
-set guifontwide=M+\ 1mn:h12
+set guifontwide=M+\ 1mn:h10
 set ai! 
 
 set number
@@ -42,7 +33,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-set tags=tags;
+set tags=./tags;/
 set autochdir
 
 set go=
@@ -52,8 +43,10 @@ set mouse=a
 set noeb vb t_vb=
 
 set history=1000
-set incsearch
 set hlsearch
+set incsearch
+
+set clipboard+=unnamed " Enable OS clipboard integration.
 
 "
 " GLOBAL SETTINGS
@@ -123,7 +116,7 @@ set wildmenu
 set noexpandtab
 
 "set list
-"set listchars=tab:\|\-
+"set listchars=tab:▸\ ,trail:¬,eol:«  " Invisible characters.
 
 " Set command-line completion mode:
 "   - on first <Tab>, when more than one match, list all matches and complete
@@ -150,8 +143,8 @@ let use_xhtml = 1
 let mapleader=","
 
 "auto save/open file rec
-"au VimEnter * source ~/.vim/session/session.vim
-"au VimLeave * mks! ~/.vim/session/session.vim
+"au VimEnter * source ~/.vim/.session
+au VimLeave * mks! ~/.vim/.session
 
 " Heneric highlight changes
 "highlight Comment cterm=none ctermfg=Gray
@@ -165,11 +158,17 @@ let mapleader=","
 "highlight netrwDir cterm=none ctermfg=Cyan
 highlight cursorline cterm=none ctermbg=none guibg=#303030
 
+au BufWinEnter,FileType html setfiletype htmldjango
+au BufWinEnter,FileType html colo darkblue
+au BufWinEnter,FileType *.json,*jshintrc setfiletype javascript
 au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au FileType less set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
 au FileType css set et sw=2 ts=2 sts=2 ff=unix fdm=indent fenc=utf8
 au FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+
+au! bufwritepost,FileType vim source ~/.vimrc
+au! bufwritepost,FileType less !lessc % > %:t:r.css "auto gen .css when .less writen
 
 au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
@@ -185,3 +184,21 @@ set wildignore+=*.DS_Store
 set wildignore+=*.pyc
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.orig
+
+if has("gui_running")
+    "winpos 505 0
+	"set lines=64 columns=133
+	set transparency=10
+	set guifont=monofur:h14
+	set go+=e
+	set guicursor=a:blinkon0 "disable blink cursor for macvim"
+	"colo freya
+	"colo lucius
+	colo jellybeans
+	"colo herald 
+	if &ft == "html" || &ft == "less" 
+        colors lucius
+	endif 
+endif
+
+
