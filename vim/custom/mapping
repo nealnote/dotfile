@@ -1,5 +1,7 @@
 " vim: set ft=vim:
 
+let mapleader=","
+
 " iunmap <C-V>
 " iunmap <C-C>
 " map CTRL-L to piece-wise copying of the line above the current one
@@ -27,22 +29,6 @@ nnoremap <Esc>P  P'[v']=
 vnoremap < <gv
 vnoremap > >gv 
 
-" Create tab
-map <C-N> :tabnew<cr>
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
-map <D-0> :tablast<CR>
-
-" Ctrl+<Left> Ctrl+<Right> to switch tabs
-map <D-left> :tabprev<cr>
-map <D-right> :tabnext<cr>
 
 " vim -p limit
 "set tabpagemax=1000
@@ -67,3 +53,18 @@ map ,r :so ~/.vim/.session<CR>
 "nnoremap <silent> ` :cclose<CR>
 nnoremap <silent> ` :Errors<CR>
 "nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+"
+" tab
+map <C-N> :tabnew<cr>
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+map <D-0> :tablast<CR>
+map <D-left> :tabprev<cr>
+map <D-right> :tabnext<cr>

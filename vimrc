@@ -6,4 +6,3 @@ source ~/.vim/custom/bundle
 source ~/.vim/custom/setting
 source ~/.vim/custom/mapping
 source ~/.vim/custom/plugin
-

@@ -35,7 +35,8 @@ Bundle "briangershon/html5.vim"
 Bundle "django.vim"
 Bundle 'pyflakes.vim'
 Bundle 'taglist.vim'
-Bundle "AutoTag"
+"Bundle "AutoTag"
+"Bundle "easytags.vim"
 "Bundle 'TaskList.vim'
 Bundle 'comments.vim'
 Bundle 'AutoClose--Alves'

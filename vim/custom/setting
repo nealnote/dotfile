@@ -1,19 +1,14 @@
 " vim: set ft=vim:
 
-
 filetype plugin indent on
 syntax enable
 
+"set background=light
 set background=dark
 colorscheme rdark
-"colo no_quarter
-"colo railscasts
-"colo ir_black
-"colo herald
-"colo slate
+"no_quarter railscasts ir_black herald slate
 
 "set noimd
-
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
@@ -22,38 +17,23 @@ set guifont=Droid\ Sans\ Mono:h12
 set guifontwide=M+\ 1mn:h10
 set ai! 
 
-set number
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
-set nowrap
-"set cursorline
-"set cursorcolumn
-set noswapfile
-set nobackup
-set nowritebackup
+set number nowrap
+"set cursorline cursorcolumn
+set noswapfile nobackup nowritebackup
 
-set tags=./tags;/
+set tags=./tags;
 set autochdir
 
 set go=
 set foldmethod=syntax
 set mouse=a
-"Disable bell
-set noeb vb t_vb=
+set noeb vb t_vb= "Disable bell
 
 set history=1000
-set hlsearch
-set incsearch
-
-set clipboard+=unnamed " Enable OS clipboard integration.
-
-"
-" GLOBAL SETTINGS
-"
-
-" Write contents of the file, if it has been modified, on buffer exit
-"set autowrite
+set hlsearch incsearch
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
@@ -83,23 +63,15 @@ set scrolloff=3
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
 
-" Use 4 spaces for (auto)indent
-set shiftwidth=4
 
 " Show (partial) commands (or size of selection in Visual mode) in the status line
-"set showcmd
+set showcmd
 
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
 
 " Don't request terminal version string (for xterm)
 set t_RV=
-
-" Use 4 spaces for <Tab> and :retab
-set tabstop=4
-
-" Write swap file to disk after every 50 characters
-set updatecount=50
 
 " Remember things between sessions
 "
@@ -113,7 +85,6 @@ set viminfo='20,\"50,:20,%,n~/.viminfo
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
 
-set noexpandtab
 
 "set list
 "set listchars=tab:▸\ ,trail:¬,eol:«  " Invisible characters.
@@ -131,49 +102,35 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal 
 set t_kb=
 fixdel
 
-" html_indent
-"let g:html_indent_inctags = "html,body,head,tbody"
-"let g:html_indent_script1 = "inc"
-"let g:html_indent_style1 = "inc"
-
 " convert to html
 let html_use_css = 1
 let use_xhtml = 1
 
-let mapleader=","
-
 "auto save/open file rec
 "au VimEnter * source ~/.vim/.session
-au VimLeave * mks! ~/.vim/.session
+"au VimLeave * mks! ~/.vim/.session
 
-" Heneric highlight changes
-"highlight Comment cterm=none ctermfg=Gray
-"highlight Match cterm=none ctermfg=red
-"highlight IncSearch cterm=none ctermfg=Black ctermbg=DarkYellow
-"highlight Search cterm=none ctermfg=Black ctermbg=DarkYellow
-"highlight String cterm=none ctermfg=DarkGreen
-"highlight treeDir cterm=none ctermfg=Cyan
-"highlight treeUp cterm=none ctermfg=DarkYellow
-"highlight treeCWD cterm=none ctermfg=DarkYellow
-"highlight netrwDir cterm=none ctermfg=Cyan
-highlight cursorline cterm=none ctermbg=none guibg=#303030
+"au BufWinEnter,FileType html colo lucius
+au BufWinEnter,FileType html set filetype=htmldjango
 
-au BufWinEnter,FileType html setfiletype htmldjango
-au BufWinEnter,FileType html colo darkblue
-au BufWinEnter,FileType *.json,*jshintrc setfiletype javascript
-au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
-au FileType less set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
-au FileType css set et sw=2 ts=2 sts=2 ff=unix fdm=indent fenc=utf8
-au FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+"auto gen .css when .less writen
+"au! bufwritepost *.less silent execute '!lessc % > %:t:r.css'
+au! bufwritepost,FileType less silent execute '!lessc % > %:t:r.css'
+au bufwritepost ~/Projects/dotfile/vim/custom/* so %
+
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
-au! bufwritepost,FileType vim source ~/.vimrc
-au! bufwritepost,FileType less !lessc % > %:t:r.css "auto gen .css when .less writen
+set noexpandtab shiftwidth=4 tabstop=4
+"au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
+au BufWinEnter,FileType less set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+"au BufWinEnter,FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType javascript,python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 
-au FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
 	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
+au FileType qf call AdjustWindowHeight(3, 10)
 
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.aux,*.out,*.toc
@@ -186,19 +143,16 @@ set wildignore+=*.egg,*.egg-info
 set wildignore+=*.orig
 
 if has("gui_running")
-    "winpos 505 0
-	"set lines=64 columns=133
+	"winpos 505 0
+	set lines=64 columns=133
 	set transparency=10
-	set guifont=monofur:h14
-	set go+=e
+	set guifont=monofur:h13
+	"set go+=e
 	set guicursor=a:blinkon0 "disable blink cursor for macvim"
+	set clipboard+=unnamed " Enable OS clipboard integration.
+	"colo kellys
+	"colo jellybeans
 	"colo freya
-	"colo lucius
-	colo jellybeans
+	colo lucius
 	"colo herald 
-	if &ft == "html" || &ft == "less" 
-        colors lucius
-	endif 
 endif
-
-
