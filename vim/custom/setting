@@ -21,6 +21,7 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 set number nowrap
+"set relativenumber
 "set cursorline cursorcolumn
 set noswapfile nobackup nowritebackup
 
@@ -112,10 +113,14 @@ let use_xhtml = 1
 
 "au BufWinEnter,FileType html colo lucius
 au BufWinEnter,FileType html set filetype=htmldjango
+"au TabEnter,FileType htmldjango colo lucius
+"au TabLeave,FileType htmldjango colo rdark
+au BufWinEnter *.md set filetype=markdown
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
 "auto gen .css when .less writen
 "au! bufwritepost *.less silent execute '!lessc % > %:t:r.css'
-au! bufwritepost,FileType less silent execute '!lessc % > %:t:r.css'
+au bufwritepost *.less silent execute '!lessc % > %:t:r.css'
 au bufwritepost ~/Projects/dotfile/vim/custom/* so %
 
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
@@ -123,9 +128,9 @@ au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 set noexpandtab shiftwidth=4 tabstop=4
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
-au BufWinEnter,FileType less set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+"au BufWinEnter,FileType less set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 "au BufWinEnter,FileType python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
-au BufWinEnter,FileType javascript,python set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType javascript,python,htmldjango,less set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 
 function! AdjustWindowHeight(minheight, maxheight)
 	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
@@ -138,7 +143,7 @@ set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store
-set wildignore+=*.pyc
+set wildignore+=*.pyc,*.css "generate css file by less
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.orig
 

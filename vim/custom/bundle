@@ -26,6 +26,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
 Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
+Bundle "nono/vim-handlebars"
+
 " vim-scripts repos
 Bundle 'mru.vim'
 Bundle "css3"
