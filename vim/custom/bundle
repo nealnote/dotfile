@@ -1,6 +1,3 @@
-" vim: set ft=vim:
-
-
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
@@ -16,16 +13,20 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'scrooloose/syntastic'
 "Bundle 'msanders/snipmate.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
 "Bundle 'jcrocholl/pep8.py'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'daviddavis/vim-colorpack'
 Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Lokaltog/vim-powerline'
 Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
+Bundle "wavded/vim-stylus"
+Bundle "kchmck/vim-coffee-script"
 Bundle "nono/vim-handlebars"
 
 " vim-scripts repos
@@ -45,7 +46,9 @@ Bundle 'AutoClose--Alves'
 Bundle 'The-NERD-tree'
 Bundle 'jade.vim'
 "colors
-Bundle 'Color-Sampler-Pack'
+"Bundle 'Color-Sampler-Pack'
 Bundle 'Solarized'
 
 " }}}
+
+" vim: set ft=vim:

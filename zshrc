@@ -33,9 +33,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/PalmPDK/bin:/opt/PalmSDK/0.1/bin/:/usr/local/mysql/bin:/Users/evan/android-sdk-mac_x86/platform-tools:~/bin
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:~/bin
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+#export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:~/bin
 export PATH=$PATH:/opt/android-sdk-macosx/platform-tools:/opt/android-sdk-macosx/tools
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/share/npm/bin
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export EDITOR=/usr/local/bin/vim
 export GIT_SSL_NO_VERIFY=true
 unsetopt correct_all
