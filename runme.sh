@@ -16,7 +16,7 @@ if [ ! -d vim/bundle/vundle ]; then
 fi
 link vim
 link vimrc
-vim +BundleInstall +qall
+#vim +BundleInstall +qall
 
 echo "init python env ..."
 if which pip > /dev/null; then
@@ -24,18 +24,9 @@ if which pip > /dev/null; then
 else
 	sudo easy_install pip
 fi
-sudo pip install flake8
+#sudo pip install flake8
 
 echo "init shell >>>"
 link gitconfig
 link bashrc
 link tmux.conf
-link zshrc
-if [ ! -d ~/.oh-my-zsh ]; then
-	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-fi
-if which zsh > /dev/null; then
-	echo "chsh -s `which zsh`"
-else
-	echo "install zsh"
-fi

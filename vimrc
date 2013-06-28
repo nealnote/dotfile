@@ -3,8 +3,8 @@ set nocompatible
 set shell=/bin/bash
 filetype off
 
-" test_again
 source ~/.vim/custom/bundle
+source ~/.vim/custom/common
 source ~/.vim/custom/setting
 source ~/.vim/custom/mapping
 source ~/.vim/custom/plugin

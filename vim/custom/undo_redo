@@ -24,7 +24,8 @@ function SaveSession()
 endfunction
 
 function RestoreSession()
-    let session_path = expand('~/.vim/sessions/' . GetProjectName())
+    "let session_path = expand('~/.vim/sessions/' . GetProjectName())
+    let session_path = expand('~/.vim/.session')
     if filereadable(session_path)
         execute 'so ' . session_path
         if bufexists(1)
@@ -39,10 +40,10 @@ function RestoreSession()
     syntax on 
 endfunction
 
-nmap ssa :call SaveSession()
-smap SO :call RestoreSession()
-autocmd VimLeave * call SaveSession()
-autocmd VimEnter * call RestoreSession()
+"nmap ssa :call SaveSession()
+"smap SO :call RestoreSession()
+"autocmd VimLeave * call SaveSession()
+"autocmd VimEnter * call RestoreSession()
 
 " Persistent undo
 set undodir=~/.vim/undodir

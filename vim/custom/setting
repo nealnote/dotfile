@@ -1,139 +1,38 @@
-filetype plugin indent on
-syntax enable
-runtime macros/matchit.vim
 
-set background=dark
-colo jellybeans
-"no_quarter railscasts ir_black herald slate rdark
+set bg=dark
+colo autumn 
+"no_quarter railscasts ir_black herald slate rdark jellybeans
 
-"set noimd
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-
-set t_Co=256
+"set guifont=Source\ Code\ Pro\ medium:h10
+set guifont=Source\ Code\ Pro\ 10
 "set guifont=Droid\ Sans\ Mono:h12
-set guifont=Source\ Code\ Pro\ ExtraLight:h12
-set guifontwide=M+\ 1mn:h10
-set ai! 
-set modelines=1
-
-set textwidth=79
-set colorcolumn=79
-set formatoptions=qrn1
-set number nowrap
-"set relativenumber
-"set cursorline cursorcolumn
-set noswapfile nobackup nowritebackup
-
-set tags=./tags;
-set autochdir
-
-set go=
-set foldmethod=syntax
-set mouse=a
-set noeb vb t_vb= "Disable bell
-
-set history=1000
-set hlsearch incsearch
-
-" Allow backspacing over everything
-set backspace=indent,eol,start
-
-" Insert mode completion options
-set completeopt+=longest
-"set completeopt=menu,longest,preview
-"set completeopt=menuone,longest,preview
-
-" Always show status line, even for one window
-set laststatus=2
-"set statusline=%t%r%h%w\ [%Y]\ [%{&ff}]\ [%{&fenc}:%{&enc}]\ [%08.8L]\ [%p%%-%P]\ [%05.5b]\ [%04.4B]\ [%08.8l]%<\ [%04.4c-%04.4v%04.4V]
-"set statusline=%<[%n]\ %F\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}][%{&ff}][ASCII=\%03.3b]\ %-10.(%l,%c%V%)\ %P
-
-" Jump to matching bracket for 2/10th of a second (works with showmatch)
-set matchtime=2
-
-" Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
-set nrformats=octal,hex,alpha
-
-" Show line, column number, and relative position within a file in the status line
-set ruler
-
-" Scroll when cursor gets within 3 characters of top/bottom edge
-set scrolloff=3
-
-" Round indent to multiple of 'shiftwidth' for > and < commands
-set shiftround
-
-
-" Show (partial) commands (or size of selection in Visual mode) in the status line
-set showcmd
-
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
-
-" Don't request terminal version string (for xterm)
-set t_RV=
-
-" Remember things between sessions
-"
-" '20  - remember marks for 20 previous files
-" \"50 - save 50 lines for each register
-" :20  - remember 20 items in command-line history 
-" %    - remember the buffer list (if vim started without a file arg)
-" n    - set name of viminfo file
-set viminfo='20,\"50,:20,%,n~/.viminfo
-
-" Use menu to show command-line completion (in 'full' case)
-set wildmenu
-
-
-"set list
-"set listchars=tab:▸\ ,trail:¬,eol:«  " Invisible characters.
-
-" Set command-line completion mode:
-"   - on first <Tab>, when more than one match, list all matches and complete
-"     the longest common  string
-"   - on second <Tab>, complete the next full match and show menu
-set wildmode=list:longest,full
-
-" Go back to the position the cursor was on the last time this file was edited
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
-
-" Fix my <Backspace> key (in Mac OS X Terminal)
-set t_kb=
-fixdel
-
-" convert to html
-let html_use_css = 1
-let use_xhtml = 1
+"set guifont=Latin\ Modern\ Mono\ Light:h16
 
 "auto save/open file rec
 "au VimEnter * source ~/.vim/.session
-au VimLeave * mks! ~/.vim/.session
+"au VimEnter * call RestoreSession()
+au VimLeave * mks! ~/.vim/sessions/recent
 
-"au BufWinEnter,FileType html colo lucius
+
 au BufWinEnter,FileType html set filetype=htmldjango
-"au TabEnter,FileType htmldjango colo lucius
-"au TabLeave,FileType htmldjango colo rdark
 au BufWinEnter *.md set filetype=markdown
 au BufWinEnter *.coffee set filetype=coffee
 au BufWinEnter *.fish set filetype=config
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
-"auto gen .css when .less writen
-"au! bufwritepost *.less silent execute '!lessc % > %:t:r.css'
 au bufwritepost *.less silent execute '!lessc % > %:t:r.css'
-au bufwritepost *.styl silent execute '!/usr/local/share/npm/bin/stylus --compress < % > %:t:r.css'
+au bufwritepost *.styl silent execute '!~/node_modules/.bin/stylus --compress < % > %:t:r.css'
+au bufwritepost *.coffee silent execute '!~/node_modules/.bin/coffee -cm %'
 "au bufwritepost ~/Projects/dotfile/vim/custom/* so %
 
-au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
-au FileType coffee map <buffer> <S-e> :CoffeeComplie<CR>
+let coffee_compiler = '~/node_modules/.bin/coffee'
 
-set noexpandtab shiftwidth=4 tabstop=4
+au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+
+"set noexpandtab shiftwidth=4 tabstop=4
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
+"au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
 au FileType javascript set fdm=marker
-"au BufWinEnter,FileType coffee CoffeeCompile watch
-au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
 au BufWinEnter,FileType coffee,python,htmldjango,less,stylus set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 
 function! AdjustWindowHeight(minheight, maxheight)
@@ -141,27 +40,21 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 au FileType qf call AdjustWindowHeight(3, 10)
 
-set wildignore+=.hg,.git,.svn
-set wildignore+=*.aux,*.out,*.toc
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest
-set wildignore+=*.sw?
-set wildignore+=*.DS_Store
-set wildignore+=*.pyc,*.css "generate css file by less
-set wildignore+=*.egg,*.egg-info
-set wildignore+=*.orig
-
 if has("gui_running")
 	"winpos 505 0
-	set lines=64 columns=133
-	set transparency=10
+	"set lines=64 columns=160
+	"set transparency=10
 	"set guifont=monofur:h13
-	"set go+=e
+	set go+=e
+	set showtabline=2
 	set guicursor=a:blinkon0 "disable blink cursor for macvim"
-	set clipboard+=unnamed " Enable OS clipboard integration.
-	colo lucius
-	"kellys jellybeans freya herald 
+	"set clipboard+=unnamed " Enable OS clipboard integration.
+	"set bg=dark
+	"dark: kellys jellybeans freya herald 
+	colo tomorrow-night
+	"light: papayawhip
+	"colo summerfruit256
+	set vb t_vb=
 endif
-
 
 " vim: set ft=vim:

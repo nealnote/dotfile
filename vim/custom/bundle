@@ -17,12 +17,14 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
-"Bundle 'jcrocholl/pep8.py'
+Bundle 'majutsushi/tagbar'
+Bundle 'crooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'daviddavis/vim-colorpack'
-Bundle 'nvie/vim-flake8'
+"Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+
 Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
 Bundle "wavded/vim-stylus"
@@ -37,11 +39,11 @@ Bundle "briangershon/html5.vim"
 "Bundle 'Pydiction'
 Bundle "django.vim"
 Bundle 'pyflakes.vim'
-Bundle 'taglist.vim'
+"Bundle 'taglist.vim'
 "Bundle "AutoTag"
 "Bundle "easytags.vim"
 "Bundle 'TaskList.vim'
-Bundle 'comments.vim'
+"Bundle 'comments.vim'
 Bundle 'AutoClose--Alves'
 Bundle 'The-NERD-tree'
 Bundle 'jade.vim'
