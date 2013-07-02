@@ -8,7 +8,6 @@ let mapleader=","
 " imap <C-L> @@@<ESC>hhkywjl?@@@<CR>P/@@@<CR>3s
 " nmap <F11> :set cursorline!<BAR>set nocursorline?<CR>
 " nmap <F12> :set cursorcolumn!<BAR>set nocursorcolumn?<CR>
-map ,s :source ~/.vimrc<CR>
 
 " switch to upper/lower window quickly
 nnoremap <c-j> <c-w>j
@@ -40,21 +39,26 @@ function! ToggleHLSearch()
     set hls
   endif
 endfunction
+
 nmap <silent> <F1> <Esc>:call ToggleHLSearch()<CR>
+map <F3> :set paste!<BAR>set nopaste?<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
+"map <F4> <ESC>:TlistToggle<CR>
 map <F5> <ESC>:NERDTreeToggle<CR>
-map <F4> <ESC>:TlistToggle<CR>
 nmap <silent> <F6> :set number!<CR>
-map <F11> :set paste!<BAR>set nopaste?<CR>
 
 
 " customize
-"map ,r :silent !arch -i386 osascript ~/sh/reloadFirefox.scpt >/dev/null<CR>
 map ,r :so ~/.vim/.session<CR>
+map ,s :source ~/.vimrc<CR>
+map ,l :MRU<cr>
+map ,c :call NERDComment(0,"toggle")<CR>
+map <C-c> :call NERDComment(0,"toggle")<CR>
 " close qfix window
 "nnoremap <silent> ` :cclose<CR>
 nnoremap <silent> ` :Errors<CR>
-"nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
-"
+
+
 " tab
 map <C-N> :tabnew<cr>
 map <D-1> 1gt

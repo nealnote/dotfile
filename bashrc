@@ -2,7 +2,7 @@ bind "set bell-style none"
 set -o vi
 export TERM=xterm-color
 export EDITOR='vim'  #Command line
-export PATH=$PATH:~/bin:/usr/local/sbin:/usr/local/share/npm/bin
+export PATH=$PATH:~/bin:/usr/local/share/python:/usr/local/sbin:/usr/local/share/npm/bin
 
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
