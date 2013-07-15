@@ -1,13 +1,14 @@
 set -x fish_greeting ''
-set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin $PATH $HOME/node_modules/.bin
+set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH /usr/local/share/npm/bin $HOME/node_modules/.bin
 set -x GIT_SSL_NO_VERIFY true
+set -x LC_ALL "en_US.UTF-8"
 
 set -x WORKON_HOME $HOME/.virtualenvs
 set -x PROJECT_HOME $HOME/Projects
 set -x VIRTUALENVWRAPPER_PYTHON /usr/bin/python
 . $PROJECT_HOME/fork/virtualfish/virtual.fish
 
-set -x yget $PROJECT_HOME/fork/you-get/you-get
+alias yget="~/.pythonz/pythons/CPython-3.3.2/bin/python3 $PROJECT_HOME/fork/you-get/you-get -o ~/Movies"
 set -x nw /Applications/node-webkit.app/Contents/MacOS/node-webkit
 
 function ll
@@ -20,7 +21,7 @@ end
 
 function fish_right_prompt
   if set -q VIRTUAL_ENV
-    echo -n -s (set_color -b blue white) "workon: " (basename "$VIRTUAL_ENV") (set_color normal)
+    echo -n -s (set_color -b blue white) "venv:" (basename "$VIRTUAL_ENV") (set_color normal)
   end
 end
 
@@ -41,12 +42,14 @@ function fish_prompt
 
   if [ (_git_branch_name) ]
   set -l git_branch (_git_branch_name)
-  set git_info $blue $git_branch".git"
 
     if [ (_is_git_dirty) ]
-      set -l dirty "$red 💀"
-      set git_info "$git_info$dirty"
+      set _dirty "$red 💀  "
+      set git_info $red $git_branch
+    else
+      set _dirty "$blue ♆ "
+      set git_info $blue $git_branch
     end
   end
-  echo -n -s $_base $git_info " "
+  echo -n -s $_base $_dirty $git_info (set_color normal)" "
 end
