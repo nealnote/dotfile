@@ -3,10 +3,6 @@ set bg=dark
 colo autumn 
 "no_quarter railscasts ir_black herald slate rdark jellybeans
 
-set guifont=Source\ Code\ Pro\ Light:h14
-"set guifont=Droid\ Sans\ Mono:h12
-"set guifont=Latin\ Modern\ Mono\ Light:h16
-
 "auto save/open file rec
 "au VimEnter * source ~/.vim/.session
 "au VimEnter * call RestoreSession()
@@ -20,11 +16,11 @@ au BufWinEnter *.fish set filetype=config
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
 au bufwritepost *.less silent execute '!lessc % > %:t:r.css'
-au bufwritepost *.styl silent execute '!~/node_modules/.bin/stylus --compress < % > %:t:r.css'
-au bufwritepost *.coffee silent execute '!~/node_modules/.bin/coffee -cm %'
+au bufwritepost *.styl silent execute '!stylus --compress < % > %:t:r.css'
+au bufwritepost *.coffee silent execute '!coffee -cm %'
 "au bufwritepost ~/Projects/dotfile/vim/custom/* so %
 
-let coffee_compiler = '~/node_modules/.bin/coffee'
+let coffee_compiler = 'coffee'
 
 au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
@@ -41,6 +37,11 @@ au FileType qf call AdjustWindowHeight(3, 10)
 
 if has("gui_running")
 	"winpos 505 0
+	"set guifont=Source\ Code\ Pro\ Light:h14
+	set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+	"set guifont=Droid\ Sans\ Mono:h12
+	"set guifont=Latin\ Modern\ Mono\ Light:h16
+
 	set lines=64 columns=160
 	"set transparency=10
 	"set guifont=monofur:h13

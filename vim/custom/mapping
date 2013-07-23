@@ -49,7 +49,7 @@ nmap <silent> <F6> :set number!<CR>
 
 
 " customize
-map ,r :so ~/.vim/.session<CR>
+map ,r :so ~/.vim/sessions/recent<CR>
 map ,s :source ~/.vimrc<CR>
 map ,l :MRU<cr>
 map ,c :call NERDComment(0,"toggle")<CR>
