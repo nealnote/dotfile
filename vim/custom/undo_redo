@@ -1,7 +1,7 @@
 " vim: set ft=vim:
 " [ref](http://imtx.me/archives/1810.html)
 " Auto Session Save/Restore
-function GetProjectName()
+function! GetProjectName()
     " Get the current editing file list, Unix only
     let edit_files = split(system("ps -o command= -p " . getpid()))
     if len(edit_files) >= 2
@@ -16,14 +16,14 @@ function GetProjectName()
     return shellescape(substitute(project_path, '[/]', '', 'g'))
 endfunction
 
-function SaveSession()
+function! SaveSession()
     "NERDTree doesn't support session, so close before saving
     execute ':NERDTreeClose' 
     let project_name = GetProjectName()
     execute 'mksession! ~/.vim/sessions/' . project_name
 endfunction
 
-function RestoreSession()
+function! RestoreSession()
     "let session_path = expand('~/.vim/sessions/' . GetProjectName())
     let session_path = expand('~/.vim/.session')
     if filereadable(session_path)
