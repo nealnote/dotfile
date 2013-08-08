@@ -107,5 +107,8 @@ let loaded_html_syntax_checker = 0
 "let coffee_compile_vert = 1
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
+" airline
+let g:airline_powerline_fonts = 1
+
 
 let g:vundle_default_git_proto = 'git'

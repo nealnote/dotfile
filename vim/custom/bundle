@@ -19,11 +19,14 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
 Bundle 'daviddavis/vim-colorpack'
 "Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Yggdroot/indentLine'
 
 Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
