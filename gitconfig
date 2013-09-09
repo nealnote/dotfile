@@ -2,10 +2,9 @@
 	name = yanyaoer
 	email = yanyaoer@gmail.com
 [core]
-	excludesfile = /Users/evan/.gitignore_global
+	excludesfile = /Users/yanyao/.gitignore_global
 [github]
 	user = yanyaoer
-	token = 68d59a1b8973ec4376f3220515d2de02
 [color]
 	ui = true
 [alias]
@@ -13,3 +12,21 @@
 	st = status -sb
 [push]
 	default = matching
+[diff]
+	tool = mvimdiff
+[difftool "sourcetree"]
+	;cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	;path = 
+[mergetool "mvimdiff"]
+	;cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.6.2.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	;cmd = mvim -d -f $LOCAL $REMOTE $BASE $MERGED
+	cmd="mvim -c 'Gdiff' $MERGED"
+	keepbackup=false
+	;trustExitCode = true
+[mergetool "sourcetree"]
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.6.2.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+;[pack]
+	;windowMemory = 100m
+	;SizeLimit = 100m
+	;threads = 1

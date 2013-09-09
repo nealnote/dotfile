@@ -1,6 +1,6 @@
 
-set bg=dark
-colo autumn 
+set bg=light
+colo solarized-light
 "no_quarter railscasts ir_black herald slate rdark jellybeans
 
 "auto save/open file rec
@@ -26,7 +26,7 @@ au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
 "set noexpandtab shiftwidth=4 tabstop=4
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
-"au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
+"au BufWinEnter,FileType python set et sw=4 ts=4 sts=4 ff=unix fenc=utf8
 au FileType javascript set fdm=marker
 au BufWinEnter,FileType coffee,python,htmldjango,less,stylus set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 
@@ -51,7 +51,7 @@ if has("gui_running")
 	set clipboard+=unnamed " Enable OS clipboard integration.
 	"set bg=dark
 	"dark: kellys jellybeans freya herald 
-	colo rdark
+	colo solarized-light
 	"light: papayawhip
 	"colo summerfruit256
 endif

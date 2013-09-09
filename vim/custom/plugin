@@ -7,6 +7,12 @@ let loaded_matchparen = 1
 " netRW: Open files in a split window
 let g:netrw_browse_split = 1
 
+" vim-move
+let g:move_key_modifier = 'C'
+
+" vim-gist
+let g:gist_clip_command = 'pbcopy'
+
 " Indent Guide
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=234 guibg=#ffffee
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=236 guibg=#ffffee
@@ -109,6 +115,7 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent
 
 " airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 
-let g:vundle_default_git_proto = 'git'
+"let g:vundle_default_git_proto = 'git'
