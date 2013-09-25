@@ -9,7 +9,7 @@ colo solarized-light
 au VimLeave * mks! ~/.vim/sessions/recent
 
 
-au BufWinEnter,FileType html set filetype=htmldjango
+"au BufWinEnter,FileType html set filetype=htmldjango
 au BufWinEnter *.md set filetype=markdown
 au BufWinEnter *.coffee set filetype=coffee
 au BufWinEnter *.fish set filetype=config
@@ -28,7 +28,7 @@ au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
 "au BufWinEnter,FileType python set et sw=4 ts=4 sts=4 ff=unix fenc=utf8
 au FileType javascript set fdm=marker
-au BufWinEnter,FileType coffee,python,htmldjango,less,stylus set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType coffee,python,jade,less,stylus set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 
 function! AdjustWindowHeight(minheight, maxheight)
 	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"

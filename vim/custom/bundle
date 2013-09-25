@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'daviddavis/vim-colorpack'
 Bundle 'kien/ctrlp.vim'
@@ -24,6 +25,7 @@ Bundle 'bling/vim-airline'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'junegunn/vim-easy-align'
 
 "Bundle 'nvie/vim-flake8'
 Bundle 'fs111/pydoc.vim'
@@ -32,6 +34,7 @@ Bundle "groenewege/vim-less"
 Bundle "wavded/vim-stylus"
 Bundle "kchmck/vim-coffee-script"
 Bundle "nono/vim-handlebars"
+Bundle "digitaltoad/vim-jade"
 
 " vim-scripts repos
 Bundle 'mru.vim'
@@ -44,7 +47,6 @@ Bundle 'pyflakes.vim'
 "Bundle "easytags.vim"
 Bundle 'AutoClose--Alves'
 Bundle 'The-NERD-tree'
-Bundle 'jade.vim'
 "colors
 Bundle 'Solarized'
 

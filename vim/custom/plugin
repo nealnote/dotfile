@@ -7,6 +7,9 @@ let loaded_matchparen = 1
 " netRW: Open files in a split window
 let g:netrw_browse_split = 1
 
+" easy-align
+vnoremap <silent> <Enter> :EasyAlign<cr>
+
 " vim-move
 let g:move_key_modifier = 'C'
 
