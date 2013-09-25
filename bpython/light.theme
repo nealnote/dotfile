@@ -1,0 +1,19 @@
+[syntax]
+keyword = M
+name = r
+comment = b
+string = g
+error = r
+number = B
+operator = c
+punctuation = b
+token = g
+
+[interface]
+# XXX: gnome-terminal appears to be braindead. The cursor will disappear unless
+# you set the background colour to "d".
+background = w
+output = b
+main = b
+prompt = r
+prompt_more = g
