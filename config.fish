@@ -31,7 +31,7 @@ function fish_prompt
   function _git_branch_name
     echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
   end
-    
+
   function _is_git_dirty
     echo (git status -s --ignore-submodules=dirty ^/dev/null)
   end
