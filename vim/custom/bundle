@@ -16,9 +16,12 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'daviddavis/vim-colorpack'
+Bundle 'reedes/vim-colors-pencil'
+Bundle 'morhetz/gruvbox'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
+Bundle 'mhinz/vim-signify'
 Bundle 'sjl/gundo.vim'
 Bundle 'matze/vim-move'
 Bundle 'bling/vim-airline'
@@ -26,8 +29,11 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'mattboehm/vim-accordion'
+Bundle 'junegunn/goyo.vim'
 
 "Bundle 'nvie/vim-flake8'
+Bundle 'tell-k/vim-autopep8'
 Bundle 'fs111/pydoc.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
@@ -35,19 +41,21 @@ Bundle "wavded/vim-stylus"
 Bundle "kchmck/vim-coffee-script"
 Bundle "nono/vim-handlebars"
 Bundle "digitaltoad/vim-jade"
+Bundle 'jnwhiteh/vim-golang'
+
+Bundle 'itchyny/calendar.vim'
 
 " vim-scripts repos
 Bundle 'mru.vim'
+Bundle 'nginx.vim'
 Bundle "css3"
 Bundle "jQuery"
 Bundle "briangershon/html5.vim"
 Bundle "django.vim"
 Bundle 'pyflakes.vim'
-"Bundle "AutoTag"
-"Bundle "easytags.vim"
+Bundle 'python_match.vim'
 Bundle 'AutoClose--Alves'
 Bundle 'The-NERD-tree'
-"colors
 Bundle 'Solarized'
 
 " }}}
