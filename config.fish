@@ -1,16 +1,21 @@
 set -x fish_greeting ''
-set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH /usr/local/share/npm/bin $HOME/node_modules/.bin $HOME/bin
+set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH $HOME/.pyenv/bin /usr/local/share/npm/bin $HOME/node_modules/.bin $HOME/bin
 set -x GIT_SSL_NO_VERIFY true
 set -x LC_ALL "en_US.UTF-8"
 set -x EDITOR vim
+set -x TERM "xterm-256color"
 
+set -x GOPATH $HOME/.go
+set -x PATH $PATH $GOPATH/bin
+set -x ANDROID_HOME /usr/local/opt/android-sdk
+
+set -x PYENV_ROOT $HOME/.pyenv
 set -x WORKON_HOME $HOME/.virtualenvs
 set -x PROJECT_HOME $HOME/Projects
 set -x VIRTUALENVWRAPPER_PYTHON /usr/bin/python
+. $PYENV_ROOT/completions/pyenv.fish
 . $PROJECT_HOME/fork/virtualfish/virtual.fish
 
-alias yget="~/.pythonz/pythons/CPython-3.3.2/bin/python3 $PROJECT_HOME/fork/you-get/you-get -o ~/Movies"
-#alias mvim="/opt/homebrew-cask/Caskroom/macvim/7.3-66/MacVim-snapshot-66/mvim"
 set -x nw /Applications/node-webkit.app/Contents/MacOS/node-webkit
 
 function ll
@@ -55,6 +60,8 @@ function fish_prompt
   end
   echo -n -s $_base $_dirty $git_info (set_color normal)" "
 end
+
+function fish_title; if set -q fts; echo $fts; else; echo $_; end; end
 
 test -s $HOME/.nvm/nvm.fish; and . $HOME/.nvm/nvm.fish
 test -s $HOME/Projects/fork/z-fish/z.fish; and . $HOME/Projects/fork/z-fish/z.fish
