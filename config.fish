@@ -1,9 +1,10 @@
 set -x fish_greeting ''
 set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH $HOME/.pyenv/bin /usr/local/share/npm/bin $HOME/node_modules/.bin $HOME/bin
+
 set -x GIT_SSL_NO_VERIFY true
 set -x LC_ALL "en_US.UTF-8"
 set -x EDITOR vim
-set -x TERM "xterm-256color"
+set -x TERM "screen-256color"
 
 set -x GOPATH $HOME/.go
 set -x PATH $PATH $GOPATH/bin
@@ -16,10 +17,19 @@ set -x VIRTUALENVWRAPPER_PYTHON /usr/bin/python
 . $PYENV_ROOT/completions/pyenv.fish
 . $PROJECT_HOME/fork/virtualfish/virtual.fish
 
-set -x nw /Applications/node-webkit.app/Contents/MacOS/node-webkit
+function cnpm
+	npm --registry=http://registry.npm.taobao.org \
+	--cache=$HOME/.npm/.cache/cnpm \
+	--disturl=http://dist.cnpmjs.org \
+	--userconfig=$HOME/.cnpmrc $argv
+end
 
 function ll
   ls -lh --color=auto -F --ignore="*.pyc" $argv
+end
+
+function ql
+  qlmanage -p $argv 2>/dev/null
 end
 
 function myfunc --on-event virtualenv_did_activate
