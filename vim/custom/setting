@@ -1,7 +1,8 @@
 
-"set bg=light
-set bg=dark
-colo desert
+set bg=light
+colo pencil
+"set bg=dark
+"colo desert
 "dark: kellys freya no_quarter ir_black herald slate rdark jellybeans koehler
 "light: papayawhip summerfruit256 solarized-light
 
