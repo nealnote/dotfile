@@ -1,11 +1,11 @@
 [user]
-	name = yanyaoer
-	email = yanyaoer@gmail.com
+	name = yanyao
+	email = yanyao@xiaomi.com
 [core]
-	excludesfile = /Users/evan/.gitignore_global
+	excludesfile = /Users/yanyao/.gitignore_global
 [github]
 	user = yanyaoer
-	token = 68d59a1b8973ec4376f3220515d2de02
+	email = yanyaoer@gmail.com
 [color]
 	ui = true
 [alias]
@@ -13,3 +13,14 @@
 	st = status -sb
 [push]
 	default = matching
+[diff]
+	tool = mvimdiff
+[mergetool "mvimdiff"]
+	cmd="mvim -c 'Gdiff' $MERGED"
+	keepbackup=false
+[difftool "mvimdiff"]
+	cmd="mvim -c 'Gdiff' $MERGED"
+;[pack]
+	;windowMemory = 100m
+	;SizeLimit = 100m
+	;threads = 1

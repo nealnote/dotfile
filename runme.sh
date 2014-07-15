@@ -29,6 +29,7 @@ vim +BundleInstall +qall
 echo "init shell >>>"
 link gitconfig
 link bashrc
+link bpython
 link tmux.conf
 
 #link zshrc

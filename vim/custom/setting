@@ -1,7 +1,9 @@
 
-set bg=dark
-colo autumn 
-"no_quarter railscasts ir_black herald slate rdark jellybeans
+set bg=light
+"set bg=dark
+colo pencil
+"dark: kellys freya no_quarter ir_black herald slate rdark jellybeans koehler
+"light: papayawhip summerfruit256 solarized-light
 
 "auto save/open file rec
 "au VimEnter * source ~/.vim/.session
@@ -15,20 +17,37 @@ au BufWinEnter *.coffee set filetype=coffee
 au BufWinEnter *.fish set filetype=config
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 
+
 au bufwritepost *.less silent execute '!lessc % > %:t:r.css'
 au bufwritepost *.styl silent execute '!stylus --compress < % > %:t:r.css'
 au bufwritepost *.coffee silent execute '!coffee -cm %'
+au bufwritepost ~/Projects/chaos/static/tpl/* silent execute '!clientjade * > ../tpl.js'
+"au bufwritepost ~/Projects/tree/static/* silent execute '!cd ~/Projects/tree/static/; component build'
 "au bufwritepost ~/Projects/dotfile/vim/custom/* so %
 
 let coffee_compiler = 'coffee'
 
-au FileType python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+au filetype python map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+" close preview window on movement in insert mode or when leaving insert mode
+au CursorMovedI * if pumvisible() == 0|silent! pclose|endif
+au InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 "set noexpandtab shiftwidth=4 tabstop=4
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
-"au BufWinEnter,FileType css set et sw=4 ts=4 sts=4 ff=unix fdm=indent fenc=utf8
+"au BufWinEnter,FileType python set et sw=4 ts=4 sts=4 ff=unix fenc=utf8
 au FileType javascript set fdm=marker
-au BufWinEnter,FileType coffee,python,htmldjango,less,stylus set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType js,lua,coffee,python,jade,less,stylus,yaml,htmldjango set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au FileType calendar set colorcolumn=0
+
+let $static_path = '/data/cuckoo/static/'
+function! Static_build()
+  if expand('%:e') == 'jade' 
+    execute '!cd '.$static_path.'cuckoo/tpl/; node builder.js'
+  endif
+  execute '!cd '.$static_path.'; component build'
+endfunction
+au bufwritepost * if expand('%:p') =~ expand($static_path) | silent call Static_build() | endif
+
 
 function! AdjustWindowHeight(minheight, maxheight)
 	exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
@@ -38,22 +57,17 @@ au FileType qf call AdjustWindowHeight(3, 10)
 if has("gui_running")
 	"winpos 505 0
 	"set guifont=Source\ Code\ Pro\ Light:h14
-	set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-	"set guifont=Droid\ Sans\ Mono:h12
+	"set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 	"set guifont=Latin\ Modern\ Mono\ Light:h16
+	set guifont=Cosmic\ Sans\ Neue\ Mono:h14
 
-	set lines=64 columns=160
+	"set lines=64 columns=160
 	"set transparency=10
-	"set guifont=monofur:h13
 	set go+=e
 	set showtabline=2
 	set guicursor=a:blinkon0 "disable blink cursor for macvim"
 	set clipboard+=unnamed " Enable OS clipboard integration.
-	"set bg=dark
-	"dark: kellys jellybeans freya herald 
-	colo rdark
-	"light: papayawhip
-	"colo summerfruit256
+	"colo solarized-light
 endif
 
 " vim: set ft=vim:
