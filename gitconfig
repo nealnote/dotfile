@@ -1,11 +1,11 @@
 [user]
-	name = yanyao
-	email = yanyao@xiaomi.com
+	name = nealnote
+	email = nealnote@gmail.com
 [core]
-	excludesfile = /Users/yanyao/.gitignore_global
+	excludesfile = /Users/neal/.gitignore_global
 [github]
-	user = yanyaoer
-	email = yanyaoer@gmail.com
+	user = nealnote
+	email = nealnote@gmail.com
 [color]
 	ui = true
 [alias]

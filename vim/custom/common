@@ -14,9 +14,9 @@ set ai!
 set modelines=1
 
 set textwidth=79
-"set colorcolumn=79
+set colorcolumn=79
 set formatoptions=qrn1mM
-set nonumber nowrap
+set number nowrap
 set noswapfile
 set backupdir=~/.vim/backup,/tmp
 

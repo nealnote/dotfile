@@ -2,3 +2,4 @@ vim/bundle
 vim/.session
 vim/sessions
 vim/undodir
+*.DS_Store
