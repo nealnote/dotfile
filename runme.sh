@@ -9,7 +9,9 @@ link() {
     fi
 }
 linkfish() {
-    ln -s "`pwd`/config.fish" "$HOME/.config/fish/config.fish"
+    if [ ! -d $HOME/.config/fish]; then
+        ln -s "`pwd`/config.fish" "$HOME/.config/fish/config.fish"
+    fi
 }
 
 
