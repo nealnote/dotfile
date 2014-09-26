@@ -8,6 +8,11 @@ link() {
        ln -s "`pwd`/$1" "$HOME/.$1"
     fi
 }
+linkfish() {
+    if [ ! -d $HOME/.config/fish]; then
+        ln -s "`pwd`/config.fish" "$HOME/.config/fish/config.fish"
+    fi
+}
 
 
 echo "init vim >>>"
@@ -31,6 +36,7 @@ link gitconfig
 link bashrc
 link bpython
 link tmux.conf
+linkfish
 
 #link zshrc
 #if [ ! -d ~/.oh-my-zsh ]; then
