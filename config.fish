@@ -6,9 +6,9 @@ set -x LC_ALL "en_US.UTF-8"
 set -x EDITOR vim
 set -x TERM "screen-256color"
 
-set -x GOPATH $HOME/.go
-set -x PATH $PATH $GOPATH/bin
-set -x ANDROID_HOME /usr/local/opt/android-sdk
+#set -x GOPATH $HOME/.go
+#set -x PATH $PATH $GOPATH/bin
+#set -x ANDROID_HOME /usr/local/opt/android-sdk
 
 set -x PYENV_ROOT $HOME/.pyenv
 set -x WORKON_HOME $HOME/.virtualenvs

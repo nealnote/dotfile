@@ -31,7 +31,7 @@ alias ll='ls -l'
 
 alias unrar='unrar x'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-alias vim='/Applications/Vim.app/Contents/MacOS/Vim'
+#alias vim='/Applications/Vim.app/Contents/MacOS/Vim'
 #alias vim='/Users/evan/vim7/src/MacVim/build/Release/MacVim.app/Contents/MacOS/Vim'
 #alias mvim='/Users/evan/vim7/src/MacVim/build/Release/MacVim.app/Contents/MacOS/MacVim'
 alias vi='vim'

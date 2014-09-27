@@ -12,7 +12,7 @@ Bundle 'gmarik/vundle'
 
 " repos on github
 Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'daviddavis/vim-colorpack'
