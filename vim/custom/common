@@ -16,7 +16,7 @@ set modelines=1
 set textwidth=79
 "set colorcolumn=79
 set formatoptions=qrn1mM
-set nonumber nowrap
+set nonumber wrap
 set noswapfile
 set backupdir=~/.vim/backup,/tmp
 
@@ -108,7 +108,8 @@ set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store
-set wildignore+=*.pyc,*.map,*.css,*.js
+"set wildignore+=*.pyc,*.map,*.css,*.js
+set wildignore+=*.pyc,*.map
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.orig
 

@@ -1,0 +1,32 @@
+au bufwritepost ~/Projects/chaos/static/tpl/* silent execute '!clientjade * > ../tpl.js'
+"au bufwritepost ~/Projects/tree/static/* silent execute '!cd ~/Projects/tree/static/; component build'
+"au bufwritepost ~/Projects/dotfile/vim/custom/* so %
+
+function! Cuckoo_static()
+  let l:static_path = '/data/cuckoo/static/'
+  if expand('%:e') == 'jade'
+    execute '!cd '.l:static_path.'cuckoo/tpl/; node builder.js'
+  endif
+  execute '!cd '.l:static_path.'; component build'
+endfunction
+
+function! OnSave()
+  let l:path = expand('%:p')
+  if l:path =~ expand('/data/cuckoo/static')
+    call Cuckoo_static()
+  endif
+endfunction
+
+function! OnOpen()
+  let l:path = expand('%:p')
+  if l:path =~ expand('~/Projects/xiaomi')
+    setlocal et nu ts=4 sw=4 sts=4
+  elseif l:path =~ expand('~/Projects/dotfile')
+    setlocal et nu sw=2 ts=2 sts=2
+  endif
+endfunction
+
+autocmd! BufReadPost,BufNewFile * silent call OnOpen()
+autocmd! BufWritePost * silent call OnSave()
+
+" vim: set ft=vim:

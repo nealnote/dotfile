@@ -1,9 +1,9 @@
 
-set bg=light
-"set bg=dark
-colo pencil
+"set bg=light
+set bg=dark
+colo no_quarter
 "dark: kellys freya no_quarter ir_black herald slate rdark jellybeans koehler
-"light: papayawhip summerfruit256 solarized-light
+"light: papayawhip summerfruit256 solarized-light pencil
 
 "auto save/open file rec
 "au VimEnter * source ~/.vim/.session
@@ -21,9 +21,7 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 au bufwritepost *.less silent execute '!lessc % > %:t:r.css'
 au bufwritepost *.styl silent execute '!stylus --compress < % > %:t:r.css'
 au bufwritepost *.coffee silent execute '!coffee -cm %'
-au bufwritepost ~/Projects/chaos/static/tpl/* silent execute '!clientjade * > ../tpl.js'
-"au bufwritepost ~/Projects/tree/static/* silent execute '!cd ~/Projects/tree/static/; component build'
-"au bufwritepost ~/Projects/dotfile/vim/custom/* so %
+"au bufwritepost *.jade silent execute '!jade < % > %:t:r.html'
 
 let coffee_compiler = 'coffee'
 
@@ -33,20 +31,12 @@ au CursorMovedI * if pumvisible() == 0|silent! pclose|endif
 au InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 "set noexpandtab shiftwidth=4 tabstop=4
+set et sw=4 ts=4 sts=4 ff=unix fenc=utf8
 "au FileType javascript set et sw=2 ts=2 sts=2 ff=unix fdm=marker fenc=utf8
 "au BufWinEnter,FileType python set et sw=4 ts=4 sts=4 ff=unix fenc=utf8
 au FileType javascript set fdm=marker
-au BufWinEnter,FileType js,lua,coffee,python,jade,less,stylus,yaml,htmldjango set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
+au BufWinEnter,FileType javascript,lua,coffee,python,jade,less,stylus,yaml,htmldjango,markdown set et sw=2 ts=2 sts=2 ff=unix fdm=syntax fenc=utf8
 au FileType calendar set colorcolumn=0
-
-let $static_path = '/data/cuckoo/static/'
-function! Static_build()
-  if expand('%:e') == 'jade' 
-    execute '!cd '.$static_path.'cuckoo/tpl/; node builder.js'
-  endif
-  execute '!cd '.$static_path.'; component build'
-endfunction
-au bufwritepost * if expand('%:p') =~ expand($static_path) | silent call Static_build() | endif
 
 
 function! AdjustWindowHeight(minheight, maxheight)
