@@ -27,6 +27,9 @@ nnoremap <Esc>P  P'[v']=
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
+" up/down with wrapline
+map j gj
+map k gk
 
 
 " vim -p limit
@@ -58,7 +61,10 @@ map <C-c> :call NERDComment(0,"toggle")<CR>
 "nnoremap <silent> ` :cclose<CR>
 nnoremap <silent> ` :Errors<CR>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 " tab
 map <C-N> :tabnew<cr>
 map <D-1> 1gt

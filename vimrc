@@ -8,4 +8,5 @@ source ~/.vim/custom/common
 source ~/.vim/custom/setting
 source ~/.vim/custom/mapping
 source ~/.vim/custom/plugin
+source ~/.vim/custom/project
 source ~/.vim/custom/undo_redo
