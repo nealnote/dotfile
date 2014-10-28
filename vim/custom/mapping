@@ -61,10 +61,6 @@ map <C-c> :call NERDComment(0,"toggle")<CR>
 "nnoremap <silent> ` :cclose<CR>
 nnoremap <silent> ` :Errors<CR>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
 " tab
 map <C-N> :tabnew<cr>
 map <D-1> 1gt

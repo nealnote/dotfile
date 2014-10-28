@@ -10,6 +10,7 @@ set -x TERM "screen-256color"
 #set -x PATH $PATH $GOPATH/bin
 #set -x ANDROID_HOME /usr/local/opt/android-sdk
 
+set -x JAVA_HOME /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 set -x PYENV_ROOT $HOME/.pyenv
 set -x WORKON_HOME $HOME/.virtualenvs
 set -x PROJECT_HOME $HOME/Projects
