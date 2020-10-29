@@ -25,7 +25,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-signify'
 Bundle 'sjl/gundo.vim'
 Bundle 'matze/vim-move'
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -53,7 +53,7 @@ Bundle 'mhinz/vim-startify'
 " vim-scripts repos
 Bundle 'mru.vim'
 Bundle 'nginx.vim'
-Bundle "jQuery"
+"Bundle "jQuery"
 Bundle "django.vim"
 Bundle 'pyflakes.vim'
 Bundle 'python_match.vim'
