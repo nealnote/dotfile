@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 #export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/PalmPDK/bin:/opt/PalmSDK/0.1/bin/:/usr/local/mysql/bin:/Users/evan/android-sdk-mac_x86/platform-tools:~/bin
 #export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:~/bin
 #export PATH=$PATH:/opt/android-sdk-macosx/platform-tools:/opt/android-sdk-macosx/tools
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH:$HOME/node_modules/.bin"
+#export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH:$HOME/node_modules/.bin"
 #export PATH=/usr/local/share/python:/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/share/npm/bin
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export EDITOR=/usr/local/bin/vim
@@ -50,6 +50,7 @@ export PROJECT_HOME=$HOME/Projects
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # alias
-alias ls='ls --color=auto -F --ignore="*.pyc"'
+#alias ls='ls --color=auto -F --ignore="*.pyc"'
 alias yget='$PROJECT_HOME/fork/you-get/you-get'
-alias mvim='/Volumes/Macintosh\ HD/opt/homebrew-cask/Caskroom/macvim/7.3-66/MacVim-snapshot-66/mvim'
+#alias mvim='/Volumes/Macintosh\ HD/opt/homebrew-cask/Caskroom/macvim/7.3-66/MacVim-snapshot-66/mvim'
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles

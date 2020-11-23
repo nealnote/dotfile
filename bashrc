@@ -3,6 +3,7 @@ set -o vi
 export TERM=xterm-color
 export EDITOR='vim'  #Command line
 export PATH=$PATH:~/bin:/usr/local/share/python:/usr/local/sbin:/usr/local/share/npm/bin
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
@@ -32,8 +33,8 @@ alias ll='ls -l'
 alias unrar='unrar x'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 #alias vim='/Applications/Vim.app/Contents/MacOS/Vim'
-#alias vim='/Users/evan/vim7/src/MacVim/build/Release/MacVim.app/Contents/MacOS/Vim'
-#alias mvim='/Users/evan/vim7/src/MacVim/build/Release/MacVim.app/Contents/MacOS/MacVim'
+alias vim='/usr/local/Cellar/macvim/8.2-166_1/MacVim.app/Contents/MacOS/Vim'
+alias mvim='/usr/local/Cellar/macvim/8.2-166_1/MacVim.app/Contents/MacOS/MacVim'
 alias vi='vim'
 alias wget='wget -c'
 alias axel='axel -a -n 10'

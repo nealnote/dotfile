@@ -1,5 +1,5 @@
 set -x fish_greeting ''
-set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH $HOME/.pyenv/bin /usr/local/share/npm/bin $HOME/node_modules/.bin $HOME/bin
+#set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/bin /usr/local/sbin $PATH $HOME/.pyenv/bin /usr/local/share/npm/bin $HOME/node_modules/.bin $HOME/bin
 
 set -x GIT_SSL_NO_VERIFY true
 set -x LC_ALL "en_US.UTF-8"
@@ -10,13 +10,13 @@ set -x TERM "screen-256color"
 #set -x PATH $PATH $GOPATH/bin
 #set -x ANDROID_HOME /usr/local/opt/android-sdk
 
-set -x JAVA_HOME /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-set -x PYENV_ROOT $HOME/.pyenv
-set -x WORKON_HOME $HOME/.virtualenvs
+#set -x JAVA_HOME /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+#set -x PYENV_ROOT $HOME/.pyenv
+#set -x WORKON_HOME $HOME/.virtualenvs
 set -x PROJECT_HOME $HOME/Projects
-set -x VIRTUALENVWRAPPER_PYTHON /usr/bin/python
-. $PYENV_ROOT/completions/pyenv.fish
-. $PROJECT_HOME/fork/virtualfish/virtual.fish
+#set -x VIRTUALENVWRAPPER_PYTHON /usr/bin/python
+#. $PYENV_ROOT/completions/pyenv.fish
+#. $PROJECT_HOME/fork/virtualfish/virtual.fish
 
 function cnpm
 	npm --registry=http://registry.npm.taobao.org \
@@ -74,5 +74,5 @@ end
 
 function fish_title; if set -q fts; echo $fts; else; echo $_; end; end
 
-test -s $HOME/.nvm/nvm.fish; and . $HOME/.nvm/nvm.fish
-test -s $HOME/Projects/fork/z-fish/z.fish; and . $HOME/Projects/fork/z-fish/z.fish
+#test -s $HOME/.nvm/nvm.fish; and . $HOME/.nvm/nvm.fish
+#test -s $HOME/Projects/fork/z-fish/z.fish; and . $HOME/Projects/fork/z-fish/z.fish
